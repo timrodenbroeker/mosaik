@@ -4,6 +4,8 @@ let receiveImage = false;
 let newImagePath = "";
 var font;
 
+const colors = ['#000000', '#aaaaaa', "#FFFFFF"];
+
 var overlay = document.getElementById("overlay");
 
 const W = 700;
@@ -21,7 +23,7 @@ function setup() {
     canvas.parent('sketch');
     img.resize(W,H);
     textFont(font);
-    textSize(12);
+    textSize(10);
     textAlign(LEFT,TOP);
 }
 
@@ -49,12 +51,18 @@ function draw() {
             let b = brightness(c);
             let fillColor = 0;
 
+            // To do thresshold mehrfarbig
+            let colorselector = parseInt(b,0,100,0,colors.length);
+            
+
             if (b < threshold) {  
                 fillColor = 0;
 
             } else {
                 fillColor = 255;
             }
+
+            // fill(colors[colorselector]);
 
             
             push();
