@@ -31,3 +31,12 @@ main {
     width: 700px;
     height: 700px;
 }
+
+.rangeslider {
+    width: 100%;
+}
+
+.uiEl {
+    padding: 0 0 15px 0;
+
+}

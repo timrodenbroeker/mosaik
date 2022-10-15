@@ -11,10 +11,18 @@
     <main>
 
 <div id="ui">
-
-    <input type="range" id="tilesX" value="20" min="2" max="100" oninput="changeTilesX(value)">
-    <input type="range" id="threshold" value="100" min="1" max="255" oninput="changeThreshold(value)">
-
+    <div class="uiEl">
+        <input type="file">
+    </div>
+    <div class="uiEl">
+        <input class="rangeslider" type="range" id="tilesX" value="20" min="2" max="100" oninput="changeTilesX(value)">
+    </div>
+    <div class="uiEl">
+        <input class="rangeslider" type="range" id="threshold" value="100" min="1" max="255" oninput="changeThreshold(value)">
+    </div>
+    <div class="uiEl">
+        <button>Save</button>
+    </div>
 </div>
 <div id="artboard">
     <div id="sketch">
