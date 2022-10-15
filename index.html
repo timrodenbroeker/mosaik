@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>The Title</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <main>
+
+<div id="ui">
+
+    <input type="range" id="tilesX" value="20" min="2" max="100" oninput="changeTilesX(value)">
+    <input type="range" id="threshold" value="100" min="1" max="255" oninput="changeThreshold(value)">
+
+</div>
+<div id="artboard">
+    <div id="sketch">
+
+    </div>
+</div>
+
+    </main>
+  
+    <script src="https://unpkg.com/p5@1.4.2/lib/p5.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

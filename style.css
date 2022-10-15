@@ -1,0 +1,33 @@
+body,html {
+    margin: 0;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+#ui {
+    background: #f1f1f1;
+    height: 100vh;
+    padding: 15px;
+}
+
+#artboard {
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sketch {
+    background: yellow;
+    width: 700px;
+    height: 700px;
+}
