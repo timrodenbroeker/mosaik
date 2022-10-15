@@ -10,29 +10,41 @@
 
     <main>
 
-<div id="ui">
-    <div class="uiEl">
-        <input type="file">
-    </div>
-    <div class="uiEl">
-        <input class="rangeslider" type="range" id="tilesX" value="20" min="2" max="100" oninput="changeTilesX(value)">
-    </div>
-    <div class="uiEl">
-        <input class="rangeslider" type="range" id="threshold" value="30" min="1" max="255" oninput="changeThreshold(value)">
-    </div>
-    <div class="uiEl">
-        <button>Save</button>
-    </div>
-</div>
-<div id="artboard">
-    <div id="sketch">
+        <div id="ui">
+            <div class="uiEl">
+                <button onclick="toggleOverlay()">select Image</button>
+            </div>
+            <div class="uiEl">
+                <input class="rangeslider" type="range" id="tilesX" value="20" min="2" max="100" oninput="changeTilesX(value)">
+            </div>
+            <div class="uiEl">
+                <input class="rangeslider" type="range" id="threshold" value="30" min="1" max="101" oninput="changeThreshold(value)">
+            </div>
+            <div class="uiEl">
+                <button onclick="saveImage()">Save</button>
+            </div>
+        </div>
+        <div id="artboard">
+            <div id="sketch">
 
-    </div>
-</div>
+            </div>
+        </div>
 
     </main>
-  
+
+    <aside id="overlay">
+        <div id="images">
+            <img onclick="selectImage(src)" src="data/img/1.jpg">
+            <img onclick="selectImage(src)" src="data/img/2.jpg">
+            <img onclick="selectImage(src)" src="data/img/3.jpg">
+            <img onclick="selectImage(src)" src="data/img/4.jpg">
+            <img onclick="selectImage(src)" src="data/img/5.jpg">
+        </div>
+    </aside>
+
+    <script src="https://unpkg.com/jquery@3.6.1/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/p5@1.4.2/lib/p5.min.js"></script>
+    
     <script src="app.js"></script>
 </body>
 </html>

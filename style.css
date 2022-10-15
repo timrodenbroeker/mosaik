@@ -40,3 +40,35 @@ main {
     padding: 0 0 15px 0;
 
 }
+
+aside {
+    position: fixed;
+    right: -100vw;
+    top:0;
+    padding: 10px;
+    
+    height: 100vh;
+    width: calc(100vw - 300px);
+    background:#aaaaaa;
+    transition: right 0.3s ease;
+}
+
+#images {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#images img {
+    max-width: 200px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+aside.active {
+    right: 0;
+}
+
+img {
+    width: 100%;
+}
