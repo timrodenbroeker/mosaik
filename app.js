@@ -26,7 +26,7 @@ function setup() {
 }
 
 function draw() {
-    img.resize(W,H);
+    // img.resize(W,H);
     let tilesX = document.getElementById("tilesX").value;
     let tilesY = tilesX;
     let threshold = document.getElementById("threshold").value;
