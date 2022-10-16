@@ -1,5 +1,7 @@
 var img;
 
+var alphabet ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 let receiveImage = false;
 let newImagePath = "";
 var font;
@@ -79,7 +81,7 @@ function draw() {
         noStroke();
         push();
         translate(x*tileW,0);
-        text(x,1,1);
+        text(x+1,1,1);
         pop();
     }
 
@@ -88,7 +90,7 @@ function draw() {
         noStroke();
         push();
         translate(0,y*tileH);
-        text(y,1,1);
+        text(alphabet.charAt(y),1,1);
         pop();
     }
 
