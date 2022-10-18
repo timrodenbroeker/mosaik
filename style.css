@@ -49,8 +49,9 @@ aside {
     
     height: 100vh;
     width: calc(100vw - 300px);
-    background:#aaaaaa;
+    background:#f1f1f1;
     transition: right 0.3s ease;
+    overflow-y: scroll;
 }
 
 #images {

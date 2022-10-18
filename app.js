@@ -35,6 +35,9 @@ function draw() {
     let tilesY = tilesX;
     let threshold = document.getElementById("threshold").value;
 
+    if (img.width != width){
+        img.resize(width,height);
+    }
 
     background("#ff0000");
     image(img,0,0);
