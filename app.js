@@ -79,23 +79,23 @@ function draw() {
         }
     }
 
-    for (let x = 0; x < tilesX; x++) {
-        fill("#ff0000");
-        noStroke();
-        push();
-        translate(x*tileW,0);
-        text(x+1,1,1);
-        pop();
-    }
+    // for (let x = 0; x < tilesX; x++) {
+    //     fill("#ff0000");
+    //     noStroke();
+    //     push();
+    //     translate(x*tileW,0);
+    //     text(x+1,1,1);
+    //     pop();
+    // }
 
-    for (let y = 0; y < tilesY; y++) {
-        fill("#ff0000");
-        noStroke();
-        push();
-        translate(0,y*tileH);
-        text(alphabet.charAt(y),1,1);
-        pop();
-    }
+    // for (let y = 0; y < tilesY; y++) {
+    //     fill("#ff0000");
+    //     noStroke();
+    //     push();
+    //     translate(0,y*tileH);
+    //     text(alphabet.charAt(y),1,1);
+    //     pop();
+    // }
 
 
     if (changeImage == true) {
