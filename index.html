@@ -12,16 +12,18 @@
 
         <div id="ui">
             <div class="uiEl">
-                <button onclick="toggleOverlay()">select Image</button>
+                <button onclick="toggleOverlay()">Vorlage auswählen</button>
             </div>
             <div class="uiEl">
-                <input class="rangeslider" type="range" id="tilesX" value="20" min="2" max="40" oninput="changeTilesX(value)">
+                <h5>Auflösung</h5>
+                <input class="rangeslider" type="number" id="tilesX" value="20" min="2" max="40" oninput="changeTilesX(value)">
             </div>
             <div class="uiEl">
+                <h5>Schwellenwert</h5>
                 <input class="rangeslider" type="range" id="threshold" value="30" min="1" max="101" oninput="changeThreshold(value)">
             </div>
             <div class="uiEl">
-                <button onclick="saveImage()">Save</button>
+                <button onclick="saveImage()">Bild Speichern</button>
             </div>
         </div>
         <div id="artboard">
@@ -44,8 +46,6 @@
             <img onclick="selectImage(src)" src="data/img/8.jpg">
             <img onclick="selectImage(src)" src="data/img/9.jpg">
             <img onclick="selectImage(src)" src="data/img/10.jpg">
-        
-
             <img onclick="selectImage(src)" src="data/img/11.jpg">
             <img onclick="selectImage(src)" src="data/img/12.jpg">
             <img onclick="selectImage(src)" src="data/img/13.jpg">
@@ -56,7 +56,6 @@
             <img onclick="selectImage(src)" src="data/img/18.jpg">
             <img onclick="selectImage(src)" src="data/img/19.jpg">
             <img onclick="selectImage(src)" src="data/img/20.jpg">
-
             <img onclick="selectImage(src)" src="data/img/21.jpg">
             <img onclick="selectImage(src)" src="data/img/22.jpg">
             <img onclick="selectImage(src)" src="data/img/23.jpg">

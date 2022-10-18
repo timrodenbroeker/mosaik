@@ -1,6 +1,6 @@
 body,html {
     margin: 0;
-
+    font-family: monospace;
 }
 
 * {
@@ -27,7 +27,7 @@ main {
 }
 
 #sketch {
-    background: yellow;
+    background: #111111;
     width: 700px;
     height: 700px;
 }
@@ -45,7 +45,7 @@ aside {
     position: fixed;
     right: -100vw;
     top:0;
-    padding: 10px;
+
     
     height: 100vh;
     width: calc(100vw - 300px);
@@ -55,14 +55,14 @@ aside {
 }
 
 #images {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
 }
 
 #images img {
     max-width: 200px;
-    padding: 10px;
+    padding: 1px;
     cursor: pointer;
 }
 
@@ -72,4 +72,25 @@ aside.active {
 
 img {
     width: 100%;
+}
+
+#ui button {
+    background: #CCCCCC;
+    color: black;
+    padding: 5px 15px;
+    outline: 0;
+    box-shadow: none;
+    border: 0;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+#ui button:hover {
+    background: #ffff00;
+}
+
+#ui h5 {
+    margin: 0 0 5px 0;
+    padding: 0;
+    text-transform: uppercase;
 }
