@@ -1,3 +1,42 @@
+/* =================
+    Create Image Overlay
+*/
+
+let imagesContainer = document.getElementById("images");
+
+for (let i = 0; i < 142; i++) {
+    let img = document.createElement("img");
+    let source = "./data/img/" + i + ".jpg"
+    img.src= source;
+    img.addEventListener('click', function() {
+        selectImage(source);
+    });      
+    imagesContainer.appendChild(img);
+}
+
+
+
+let selectedImage;
+let changeImage = false;
+
+function selectImage(e) {
+    selectedImage = e;
+    changeImage = true;
+    img = loadImage(selectedImage);
+    
+    console.log(W,H);
+    overlay.classList.toggle("active");
+}
+
+
+
+
+
+/* =================
+    Sketch
+*/
+
+
 var img;
 
 var alphabet ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -5,8 +44,6 @@ var alphabet ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let receiveImage = false;
 let newImagePath = "";
 var font;
-
-const colors = ['#000000', '#aaaaaa', "#FFFFFF"];
 
 var overlay = document.getElementById("overlay");
 
@@ -16,7 +53,7 @@ const H = 700;
 var pg;
 
 function preload() {
-    img = loadImage("data/img/0.jpg");
+    img = loadImage("data/img/40.jpg");
     font = loadFont("data/spaceMonoBold.ttf");
 }
 
@@ -33,18 +70,19 @@ function draw() {
     // img.resize(W,H);
     let tilesX = document.getElementById("tilesX").value;
     let tilesY = tilesX;
-    let threshold = document.getElementById("threshold").value;
+    let threshold2 = document.getElementById("threshold2").value;
+    let threshold3 = document.getElementById("threshold3").value;
 
     if (img.width != width){
         img.resize(width,height);
     }
 
-    background("#ff0000");
-    image(img,0,0);
+    background("#FFFFFF");
+    // image(img,0,0);
 
     let tileW = W / tilesX;
     let tileH = H / tilesY;
-
+    stroke("#DDDDDD");
 
     for (let x = 0; x < tilesX; x++) {
         for (let y = 0; y < tilesY; y++) {
@@ -54,27 +92,19 @@ function draw() {
             let c = img.get(parseInt(px),parseInt(py));
 
             let b = brightness(c);
-            let fillColor = 0;
-
-            // To do thresshold mehrfarbig
-            let colorselector = parseInt(b,0,100,0,colors.length);
-            
-
-            if (b < threshold) {  
-                fillColor = 0;
-
-            } else {
-                fillColor = 255;
-            }
-
-            // fill(colors[colorselector]);
-
             
             push();
             translate(px,py);
-            stroke("#aaaaaa");
-            fill(fillColor);
-            rect(0,0,tileW,tileH);
+            fill("#FFFFFF");
+            rect(0,0,tileW,tileH);  
+            if (b < threshold2) {  
+                fill("#AAAAAA");
+                rect(0,0,tileW,tileH);  
+            } if (b < threshold3) {  
+                fill("#000000");
+                rect(0,0,tileW,tileH);
+            } 
+
             pop();
         }
     }
@@ -113,10 +143,7 @@ function changeTilesY() {
     
 }
 
-function changeThreshold() {
 
-    
-}
 
 function saveImage() {
     save("frame.png");
@@ -125,18 +152,3 @@ function saveImage() {
 function toggleOverlay() {
     overlay.classList.toggle("active");
 }
-
-
-let selectedImage;
-let changeImage = false;
-
-function selectImage(e) {
-    console.log(e);
-    selectedImage = e;
-    changeImage = true;
-    img = loadImage(selectedImage);
-    
-    console.log(W,H);
-    overlay.classList.toggle("active");
-}
-
